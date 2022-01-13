@@ -1,0 +1,46 @@
+{
+  "name": "react-testing-library-examples",
+  "version": "1.0.0",
+  "description": "A repo full of examples of how to use react-testing-library and test your react components",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@data-driven-forms/pf4-component-mapper": "^3.16.2",
+    "@data-driven-forms/react-form-renderer": "^3.16.2",
+    "@patternfly/patternfly": "^4.164.2",
+    "@patternfly/react-core": "4.175.4",
+    "@patternfly/react-icons": "^4.32.1",
+    "prop-types": "^15.8.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
