@@ -6,4 +6,4 @@ import '@patternfly/patternfly/patternfly-addons.css';
 
 import Form from "./form";
 
-render(<Form />, document.getElementById("root"));
+render(<Form inPopover={true} />, document.getElementById("root"));

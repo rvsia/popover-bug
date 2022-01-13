@@ -8,7 +8,9 @@ import Form from './form';
 const spy = jest.fn();
 
 test("test form inside popover", async () => {
-    render(<Form submit={spy} />);
+    spy.mockClear();
+
+    render(<Form submit={spy} inPopover={true} />);
 
     userEvent.click(screen.getByText("Add item"));
 
@@ -20,11 +22,34 @@ test("test form inside popover", async () => {
         screen.getByLabelText("Notification title"),
         "new notification tile"
     );
+    expect(screen.getByLabelText("Notification title")).toHaveValue('new notification tile')
+
     userEvent.click(screen.getByText("Add"));
 
     await waitFor(() => () =>
         expect(screen.getByLabelText("Notification title")).toThrow()
     );
 
-    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith({
+        name: "new notification tile"
+    });
+});
+
+test("test form outside popover", async () => {
+    spy.mockClear();
+
+    render(<Form submit={spy} inPopover={false}/>);
+
+    userEvent.type(
+        screen.getByLabelText("Notification title"),
+        "new notification tile"
+    );
+
+    expect(screen.getByLabelText("Notification title")).toHaveValue('new notification tile')
+
+    userEvent.click(screen.getByText("Add"));
+
+    expect(spy).toHaveBeenCalledWith({
+        name: "new notification tile"
+    });
 });
